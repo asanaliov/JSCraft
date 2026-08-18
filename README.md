@@ -1,36 +1,37 @@
 # JSCraft
 
-JSCraft is a small original voxel sandbox that runs directly in a modern browser.
-It includes a deterministic world, first-person movement, terrain collision, seven placeable block types, block breaking, persistent local saves, a day clock, and touch controls.
+> Minecraft, but we have JavaScript.
 
-## Run it
+JSCraft is a browser-based voxel sandbox game inspired by the timeless concept of
+breaking blocks, placing blocks, and somehow spending three hours building a
+dirt house instead of doing anything productive.
+
+Built with JavaScript because apparently WebGL wasn't enough suffering.
+
+## Features
+
+- 🌍 Procedurally generated voxel world
+- ⛏️ Break blocks
+- 🧱 Place blocks
+- 🎮 First-person movement
+- 🌳 Trees, terrain, and other suspiciously familiar objects
+- 🌞 Day/night cycle
+- 💾 [Add saving here if implemented]
+- 🐛 Bugs - some intentional, most not
+
+## 🛠️ Tech Stack
+
+- JavaScript
+- HTML5
+- CSS
+- WebGL / Three.js
+- Pure determination
+
+## 🚀 Getting Started
+
+Clone the repository:
 
 ```bash
-npm start
+git clone https://github.com/asanaliov/jscraft.git
+cd jscraft
 ```
-
-Open `http://localhost:4173` in a browser.
-
-No package installation is required.
-
-## Controls
-
-- Use `W`, `A`, `S`, and `D` to move.
-- Move the mouse to look around.
-- Press `Space` to jump.
-- Hold `Shift` to sprint.
-- Left-click to break a block.
-- Right-click to place the selected block.
-- Use the mouse wheel or keys `1` through `7` to select a block.
-- Press `R` if you get stuck and need to return to the spawn point.
-- Press `Escape` to pause and release the mouse.
-
-## Test it
-
-```bash
-npm test
-```
-
-The automated tests cover deterministic terrain, save restoration, hashing, and voxel raycasting.
-
-The title artwork was generated specifically for this project and is not copied from Minecraft.
