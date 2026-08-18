@@ -1,6 +1,6 @@
-# Blockbound
+# JSCraft
 
-Blockbound is a small original voxel sandbox that runs directly in a modern browser.
+JSCraft is a small original voxel sandbox that runs directly in a modern browser.
 It includes a deterministic world, first-person movement, terrain collision, seven placeable block types, block breaking, persistent local saves, a day clock, and touch controls.
 
 ## Run it

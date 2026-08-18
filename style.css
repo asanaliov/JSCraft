@@ -66,7 +66,7 @@ button:focus-visible {
   align-items: center;
   padding: clamp(28px, 6vw, 104px);
   background-color: #315e35;
-  background-image: url("assets/blockbound-title.png");
+  background-image: url("assets/jscraft-title.png");
   background-position: center;
   background-size: cover;
 }

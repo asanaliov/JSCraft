@@ -34,5 +34,5 @@ createServer((request, response) => {
     response.end("Not found");
   }
 }).listen(port, () => {
-  console.log(`Blockbound is running at http://localhost:${port}`);
+  console.log(`JSCraft is running at http://localhost:${port}`);
 });

@@ -7,7 +7,8 @@ import {
   seededHash,
 } from "./world.js";
 
-const STORAGE_KEY = "blockbound-world-v1";
+const STORAGE_KEY = "jscraft-world-v1";
+const LEGACY_STORAGE_KEY = "blockbound-world-v1";
 const PLAYER_HEIGHT = 1.76;
 const PLAYER_RADIUS = 0.29;
 const CAMERA_HEIGHT = 1.62;
@@ -43,7 +44,8 @@ let worldTime = 0;
 
 function loadSave() {
   try {
-    const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    const savedWorld = localStorage.getItem(STORAGE_KEY) ?? localStorage.getItem(LEGACY_STORAGE_KEY);
+    const parsed = JSON.parse(savedWorld);
     if (!parsed || typeof parsed !== "object") return null;
     return parsed;
   } catch {
