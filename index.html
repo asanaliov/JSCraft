@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#182116">
+    <meta name="description" content="Blockbound is an original voxel sandbox adventure for your browser.">
+    <title>Blockbound - A Voxel Sandbox</title>
+    <link rel="preload" href="assets/blockbound-title.png" as="image">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main id="game-shell">
+      <canvas id="game" aria-label="Blockbound voxel world" tabindex="0"></canvas>
+
+      <section id="title-screen" class="screen" aria-labelledby="game-title">
+        <div class="title-shade"></div>
+        <div class="title-content">
+          <p class="eyebrow"><span></span> A tiny world of your own</p>
+          <h1 id="game-title" class="logo" aria-label="Blockbound">
+            <span>BLOCK</span><span>BOUND</span>
+          </h1>
+          <p class="tagline">Wander farther. Build higher. Make it yours.</p>
+          <div class="menu-actions">
+            <button id="play-button" class="game-button game-button-primary" type="button">
+              <span class="button-icon">▶</span>
+              <span><strong>Enter world</strong><small id="world-summary">Preparing terrain...</small></span>
+            </button>
+            <button id="new-world-button" class="game-button game-button-secondary" type="button">
+              <span class="button-icon">✦</span>
+              <span><strong>New world</strong><small>Choose another wild seed</small></span>
+            </button>
+          </div>
+          <div class="quick-controls" aria-label="Quick controls">
+            <span><kbd>WASD</kbd> Move</span>
+            <span><kbd>Space</kbd> Jump</span>
+            <span><span class="mouse-icon">◉</span> Mine and build</span>
+          </div>
+        </div>
+        <p class="title-credit">An original browser voxel sandbox</p>
+      </section>
+
+      <section id="hud" class="hud hidden" aria-label="Game interface">
+        <div class="topbar">
+          <div class="world-chip">
+            <span class="sun-icon">☀</span>
+            <span><strong id="day-label">Day 1</strong><small id="time-label">08:42</small></span>
+          </div>
+          <div id="hint" class="hint">Click to capture mouse · Esc to pause</div>
+          <div class="position-chip">
+            <span>XYZ</span>
+            <strong id="position-label">0 / 0 / 0</strong>
+          </div>
+        </div>
+
+        <div id="target-label" class="target-label" aria-live="polite"></div>
+        <div class="crosshair" aria-hidden="true"><i></i><b></b></div>
+
+        <div class="hotbar-wrap">
+          <p id="selected-name" class="selected-name">Meadow Grass</p>
+          <div id="hotbar" class="hotbar" role="toolbar" aria-label="Block inventory"></div>
+        </div>
+
+        <div id="save-indicator" class="save-indicator"><span></span> World saved</div>
+      </section>
+
+      <section id="pause-screen" class="screen pause-screen hidden" aria-labelledby="pause-title">
+        <div class="pause-card">
+          <p class="eyebrow centered"><span></span> Taking a breather <span></span></p>
+          <h2 id="pause-title">Game paused</h2>
+          <p>Your world is safe. Come back whenever you are ready.</p>
+          <div class="pause-actions">
+            <button id="continue-button" class="game-button game-button-primary compact" type="button">
+              <span class="button-icon">▶</span><strong>Continue</strong>
+            </button>
+            <button id="save-quit-button" class="game-button game-button-secondary compact" type="button">
+              <span class="button-icon">◆</span><strong>Save &amp; quit</strong>
+            </button>
+          </div>
+          <div class="controls-grid">
+            <span><kbd>WASD</kbd><small>Move</small></span>
+            <span><kbd>Space</kbd><small>Jump</small></span>
+            <span><kbd>Shift</kbd><small>Sprint</small></span>
+            <span><kbd>R</kbd><small>Respawn</small></span>
+          </div>
+        </div>
+      </section>
+
+      <section id="unsupported" class="screen error-screen hidden" aria-labelledby="error-title">
+        <div class="pause-card">
+          <p class="eyebrow centered"><span></span> Renderer unavailable <span></span></p>
+          <h2 id="error-title">WebGL is turned off</h2>
+          <p>Blockbound needs WebGL to draw its world. Enable hardware acceleration or try a current browser.</p>
+        </div>
+      </section>
+
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+      <section id="touch-controls" class="touch-controls" aria-label="Touch controls">
+        <div class="touch-move">
+          <button data-key="KeyW" aria-label="Move forward">▲</button>
+          <button data-key="KeyA" aria-label="Move left">◀</button>
+          <button data-key="KeyS" aria-label="Move backward">▼</button>
+          <button data-key="KeyD" aria-label="Move right">▶</button>
+        </div>
+        <div class="touch-actions">
+          <button data-action="break" aria-label="Break block">⛏</button>
+          <button data-key="Space" aria-label="Jump">↑</button>
+          <button data-action="place" aria-label="Place block">＋</button>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
