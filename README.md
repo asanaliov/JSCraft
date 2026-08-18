@@ -25,7 +25,6 @@ Built with JavaScript because apparently WebGL wasn't enough suffering.
 - HTML5
 - CSS
 - WebGL / Three.js
-- Pure determination
 
 ## 🚀 Getting Started
 
